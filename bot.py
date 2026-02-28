@@ -1,12 +1,10 @@
-import discord
 import os
+import discord
 from discord.ext import commands
 
 intents = discord.Intents.default()
 intents.message_content = True
 intents.guilds = True
-
-TOCKEN = os.getenv("BOT_TOCKEN")
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
@@ -16,17 +14,17 @@ structure = [
 
     {"type": "category", "name": "📌 중요 ▬▬▬"},
     {"type": "text", "name": "📢 공지사항", "parent": "📌 중요 ▬▬▬"},
-    {"type": "text", "name": "📢 서버-공지사항", "parent": "📌 중요 ▬▬▬"},
-    {"type": "text", "name": "📢 시험공지", "parent": "📌 중요 ▬▬▬"},
-    {"type": "text", "name": "📢 판매공지", "parent": "📌 중요 ▬▬▬"},
-    {"type": "text", "name": "📢 개발공지", "parent": "📌 중요 ▬▬▬"},
-    {"type": "text", "name": "📢 업데이트-유출", "parent": "📌 중요 ▬▬▬"},
-    {"type": "text", "name": "📢 패치노트", "parent": "📌 중요 ▬▬▬"},
-    {"type": "text", "name": "📢 동맹국", "parent": "📌 중요 ▬▬▬"},
-    {"type": "text", "name": "📢 투표", "parent": "📌 중요 ▬▬▬"},
-    {"type": "text", "name": "📢 서버부스트", "parent": "📌 중요 ▬▬▬"},
-    {"type": "text", "name": "📢 이벤트", "parent": "📌 중요 ▬▬▬"},
-    {"type": "text", "name": "📢 블랙리스트", "parent": "📌 중요 ▬▬▬"},
+    {"type": "text", "name": "📢 서브-공지사항", "parent": "📌 중요 ▬▬▬"},
+    {"type": "text", "name": "📋 시험공지", "parent": "📌 중요 ▬▬▬"},
+    {"type": "text", "name": "💵 판매공지", "parent": "📌 중요 ▬▬▬"},
+    {"type": "text", "name": "🛠️ 개발공지", "parent": "📌 중요 ▬▬▬"},
+    {"type": "text", "name": "👀 업데이트-유출", "parent": "📌 중요 ▬▬▬"},
+    {"type": "text", "name": "📝 패치노트", "parent": "📌 중요 ▬▬▬"},
+    {"type": "text", "name": "🤝 동맹국", "parent": "📌 중요 ▬▬▬"},
+    {"type": "text", "name": "🗳️ 투표", "parent": "📌 중요 ▬▬▬"},
+    {"type": "text", "name": "💎 서버부스트", "parent": "📌 중요 ▬▬▬"},
+    {"type": "text", "name": "❗ 이벤트", "parent": "📌 중요 ▬▬▬"},
+    {"type": "text", "name": "❌ 블랙리스트", "parent": "📌 중요 ▬▬▬"},
 
     {"type": "category", "name": "🌐 커뮤니티 ▬▬▬"},
     {"type": "text", "name": "💬 자유채팅", "parent": "🌐 커뮤니티 ▬▬▬"},
@@ -60,7 +58,7 @@ structure = [
 async def on_ready():
     print(f"Logged in as {bot.user}")
 
-@bot.command()
+@bot.tree.command(name="서버셋업", aliases=["setup"])
 @commands.has_permissions(manage_channels=True)
 async def 서버셋업(ctx):
     guild = ctx.guild
@@ -79,6 +77,6 @@ async def 서버셋업(ctx):
             elif item["type"] == "voice":
                 await guild.create_voice_channel(item["name"], category=parent)
 
-    await ctx.send("채널 구조 생성 완료!")
+    await ctx.send("채널 생성 완료!")
 
-bot.run(TOCKEN)
+bot.run(os.gentv("BOT_TOCKEN"))
