@@ -1,13 +1,16 @@
 [phases.setup]
-nixPkgs = ["python3.12", "gcc"]
+nixPkgs = ["...", "python312"]
 
 [phases.install]
 cmds = [
-  "python3.12 -m venv /opt/venv",
+  "python3.12 -m venv /opt/venv --clear",
   ". /opt/venv/bin/activate",
-  "pip install --upgrade pip",
+  "pip install --upgrade pip setuptools wheel",
   "pip install -r requirements.txt"
 ]
 
+[staticAssets]
+skip = true
+
 [start]
-cmd = "python bot.py"
+cmd = ". /opt/venv/bin/activate && python bot.py"
