@@ -1,12 +1,11 @@
-# .nixpacks.toml
-
 [phases.setup]
-nixPkgs = ["python311", "gcc"]
+nixPkgs = ["python3.12", "gcc"]
 
 [phases.install]
 cmds = [
-  "python3.11 -m venv /opt/venv",
+  "python3.12 -m venv /opt/venv",
   ". /opt/venv/bin/activate",
+  "pip install --upgrade pip",
   "pip install -r requirements.txt"
 ]
 
