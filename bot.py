@@ -10,9 +10,6 @@ intents.guilds = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 structure = [
-    {"type": "category", "name": "▬▬▬ ✅ 인증 ▬▬▬"},
-    {"type": "text", "name": "▬▬▬ ✅ 닉네임-양식", "parent": "▬▬▬ ✅ 인증 ▬▬▬"},
-
     {"type": "category", "name": "▬▬▬ 📌 중요 ▬▬▬"},
     {"type": "text", "name": "📢 공지사항", "parent": "▬▬▬ 📌 중요 ▬▬▬"},
     {"type": "text", "name": "📢 서브-공지사항", "parent": "▬▬▬ 📌 중요 ▬▬▬"},
