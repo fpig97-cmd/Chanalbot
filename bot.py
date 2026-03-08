@@ -181,5 +181,4 @@ async def 채널삭제(interaction: discord.Interaction):
     )
     await msg.edit(content=None, embed=embed)
 
-# 환경변수 토큰 실행 (오타 수정)
-bot.run(os.getenv("BOT_TOKEN"))
+bot.run(os.getenv("BOT_TOCKEN"))
