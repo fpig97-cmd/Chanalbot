@@ -27,7 +27,7 @@ structure = [
     {"type": "text", "name": "❗ 이벤트", "parent": "▬▬▬ 📌 중요 ▬▬▬"},
     {"type": "text", "name": "❌ 블랙리스트", "parent": "▬▬▬ 📌 중요 ▬▬▬"},
 
-    {"type": "category", "name": "🌐 커뮤니티 ▬▬▬"},
+    {"type": "category", "name": "▬▬▬ 🌐 커뮤니티 ▬▬▬"},
     {"type": "text", "name": "💬 자유채팅", "parent": "▬▬▬ 🌐 커뮤니티 ▬▬▬"},
     {"type": "text", "name": "🤖 봇명령어", "parent": "▬▬▬ 🌐 커뮤니티 ▬▬▬"},
     {"type": "text", "name": "📷 사진공유", "parent": "▬▬▬ 🌐 커뮤니티 ▬▬▬"},
